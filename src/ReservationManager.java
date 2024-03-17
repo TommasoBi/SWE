@@ -19,6 +19,6 @@ public class ReservationManager {
 In questo esempio, stampa un messaggio indicante il campo e l'orario della prenotazione.
  */
     public void makeReservation(String campo, String orario) {
-        System.out.println("Prenotazione effettuata per il campo " + campo + " all'orario " + orario);
+        System.out.println("Prenotazione effettuata per il " + campo + " all'orario " + orario);
     }
 }
