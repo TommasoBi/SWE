@@ -72,6 +72,15 @@ public class Main {
         SingleEliminationTournamentSimulation simulation = new SingleEliminationTournamentSimulation(players);
         simulation.simulateTournament();
 
+        // Creazione del manager del torneo
+        TournamentManager tournamentManager2 = TournamentManager.getInstance();
+
+        // Impostazione della strategia del torneo a girone
+        tournamentManager2.setStrategy(RoundRobinTournamentStrategy.getInstance());
+
+        // Pianificazione del torneo
+        tournamentManager2.planTournament();
+
         // Lista dei giocatori nel torneo
         List<String> players2 = new ArrayList<>();
         players2.add("Djokovic");
