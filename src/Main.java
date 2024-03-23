@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -45,6 +46,46 @@ public class Main {
         // Simulazione partite giocate
         player1.playMatch(3);
         player2.playMatch(2);
+
+        //4
+        // Creazione del torneo utilizzando il Singleton
+        TournamentManager tournamentManager = TournamentManager.getInstance();
+
+        // Impostazione della strategia di pianificazione del torneo
+        tournamentManager.setStrategy(SingleEliminationTournamentStrategy.getInstance());
+
+        // Pianificazione del torneo
+        tournamentManager.planTournament();
+
+        // Lista dei giocatori nel torneo
+        List<String> players = new ArrayList<>();
+        players.add("Djokovic");
+        players.add("Sonego");
+        players.add("Sinner");
+        players.add("Zverev");
+        players.add("Berrettini");
+        players.add("Medvedev");
+        players.add("Alcaraz");
+        players.add("Rublev");
+
+        // Simulazione del torneo ad eliminazione diretta
+        SingleEliminationTournamentSimulation simulation = new SingleEliminationTournamentSimulation(players);
+        simulation.simulateTournament();
+
+        // Lista dei giocatori nel torneo
+        List<String> players2 = new ArrayList<>();
+        players2.add("Djokovic");
+        players2.add("Sonego");
+        players2.add("Sinner");
+        players2.add("Zverev");
+        players2.add("Berrettini");
+        players2.add("Medvedev");
+        players2.add("Alcaraz");
+        players2.add("Rublev");
+
+        // Simulazione del torneo a girone
+        RoundRobinTournamentSimulation simulation2 = new RoundRobinTournamentSimulation(players2);
+        simulation2.simulateTournament();
     }
 }
 
