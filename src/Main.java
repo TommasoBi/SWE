@@ -13,6 +13,16 @@ public class Main {
         // Eseguiamo il comando
         order.execute();
 
+        // Creazione di prenotazioni utilizzando la factory
+        Booking clayBooking = BookingFactory.createBooking("clay");
+        clayBooking.book();
+
+        /*Booking grassBooking = BookingFactory.createBooking("grass");
+        grassBooking.book();
+
+        Booking syntheticBooking = BookingFactory.createBooking("synthetic");
+        syntheticBooking.book();*/
+
         //2
         // Otteniamo l'istanza di MatchTracker (Singleton)
         MatchTracker tracker = MatchTracker.getInstance();
