@@ -1,6 +1,9 @@
+package booking;
+
+import booking.ReservationManager;
 
 // COMMAND PATTERN
-/* Questa classe implementa l'interfaccia ReservationCommand e
+/* Questa classe implementa l'interfaccia booking.ReservationCommand e
 rappresenta un comando specifico per effettuare una prenotazione di campo.
  */
 public class CourtReservationCommand implements ReservationCommand {
@@ -15,7 +18,7 @@ public class CourtReservationCommand implements ReservationCommand {
     }
 
 /* Il metodo execute viene chiamato per eseguire la prenotazione.
-In questo caso, delega l'esecuzione al metodo makeReservation di ReservationManager.
+In questo caso, delega l'esecuzione al metodo makeReservation di booking.ReservationManager.
  */
     @Override
     public void execute() {

@@ -1,3 +1,4 @@
+package booking;
 
 // SINGLETON PATTERN
 // Questa classe rappresenta l'istanza singleton responsabile della gestione delle prenotazioni dei campi

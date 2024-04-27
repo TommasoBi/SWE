@@ -1,4 +1,6 @@
+package booking;
+
 // Interfaccia di prenotazione
-interface Booking {
+public interface Booking {
     void book();
 }
