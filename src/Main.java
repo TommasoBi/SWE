@@ -1,10 +1,20 @@
+import analysis.Player;
+import analysis.PlayerStatistics;
+import booking.*;
+import tournament.*;
+import tournament.TournamentManager;
+import tournament.SingleEliminationTournamentStrategy;
+import tournament.SingleEliminationTournamentSimulation;
+import tournament.RoundRobinTournamentStrategy;
+
+
 import java.util.List;
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
         //1
-        // Otteniamo l'istanza di ReservationManager (Singleton)
+        // Otteniamo l'istanza di booking.ReservationManager (Singleton)
         ReservationManager authority = ReservationManager.getInstance();
 
         // Creiamo un comando di prenotazione per il campo "Campo1" all'orario "14:00"
@@ -17,10 +27,10 @@ public class Main {
         Booking clayBooking = BookingFactory.createBooking("clay");
         clayBooking.book();
 
-        /*Booking grassBooking = BookingFactory.createBooking("grass");
+        /*booking.Booking grassBooking = booking.BookingFactory.createBooking("grass");
         grassBooking.book();
 
-        Booking syntheticBooking = BookingFactory.createBooking("synthetic");
+        booking.Booking syntheticBooking = booking.BookingFactory.createBooking("synthetic");
         syntheticBooking.book();*/
 
         //2
