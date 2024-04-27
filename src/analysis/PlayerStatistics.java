@@ -1,9 +1,13 @@
+package analysis;
+
+import analysis.Player;
+
 import java.util.HashMap;
 import java.util.Map;
 
 // OBSERVER PATTERN
 // Classe osservatrice
-class PlayerStatistics implements PlayerObserver {
+public class PlayerStatistics implements PlayerObserver {
     private Player player;
     private int totalWins;
     private int totalLosses;

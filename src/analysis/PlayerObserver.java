@@ -1,3 +1,6 @@
+package analysis;
+
+import analysis.Player;
 
 // OBSERVER PATTERN
 // Interfaccia osservata

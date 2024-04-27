@@ -1,16 +1,18 @@
+package analysis;
+
 import java.util.ArrayList;
 import java.util.List;
 
 // OBSERVER PATTERN
 /* Questo pattern ti permette di definire una dipendenza uno-a-molti tra oggetti,
  in modo che quando un oggetto cambia stato, tutti i suoi osservatori vengano notificati
-  e aggiornati automaticamente. In questo caso, potresti avere un oggetto Player
+  e aggiornati automaticamente. In questo caso, potresti avere un oggetto analysis.Player
   che viene osservato da oggetti StatisticheGiocatori che tengono traccia
   delle statistiche di ciascun giocatore
  */
 
 // Classe osservata
-class Player {
+public class Player {
     private String name;
     private int matchesPlayed;
     private int setsWon;
