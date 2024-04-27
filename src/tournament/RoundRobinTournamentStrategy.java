@@ -1,7 +1,8 @@
+package tournament;
 
 // STRATEGY PATTERN
 // Implementazione di una strategia di pianificazione del torneo a girone
-class RoundRobinTournamentStrategy implements TournamentStrategy {
+public class RoundRobinTournamentStrategy implements TournamentStrategy {
     private static final RoundRobinTournamentStrategy instance = new RoundRobinTournamentStrategy();
 
     private RoundRobinTournamentStrategy() {}

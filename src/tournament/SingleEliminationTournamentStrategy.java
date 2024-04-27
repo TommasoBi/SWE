@@ -1,7 +1,8 @@
+package tournament;
 
 // STRATEGY PATTERN
 // Implementazione di una strategia di pianificazione del torneo ad eliminazione diretta
-class SingleEliminationTournamentStrategy implements TournamentStrategy {
+public class SingleEliminationTournamentStrategy implements TournamentStrategy {
     private static final SingleEliminationTournamentStrategy instance = new SingleEliminationTournamentStrategy();
 
     private SingleEliminationTournamentStrategy() {}

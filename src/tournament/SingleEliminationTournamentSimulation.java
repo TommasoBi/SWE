@@ -1,3 +1,5 @@
+package tournament;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +10,7 @@ fino a quando non rimane un solo vincitore.
   dove il vincitore di ogni partita è determinato casualmente.
    Alla fine della simulazione, viene stampato il vincitore del torneo
  */
-class SingleEliminationTournamentSimulation {
+public class SingleEliminationTournamentSimulation {
     private List<String> players;
 
     public SingleEliminationTournamentSimulation(List<String> players) {

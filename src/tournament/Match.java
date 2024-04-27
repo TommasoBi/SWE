@@ -1,3 +1,5 @@
+package tournament;
+
 // Classe per rappresentare una partita nel torneo ad eliminazione diretta
 class Match {
     private String player1;

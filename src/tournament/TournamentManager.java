@@ -1,9 +1,10 @@
+package tournament;
 
 // SINGLETON PATTERN
 /* gestisce il torneo utilizzando il design pattern Singleton
  e può impostare la strategia di pianificazione del torneo tramite il metodo setStrategy
  */
-class TournamentManager {
+public class TournamentManager {
     private static TournamentManager instance;
     private TournamentStrategy strategy;
 
