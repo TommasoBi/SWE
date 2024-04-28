@@ -1,4 +1,7 @@
-package analysis;
+package View;
+
+import Models.Player;
+import Models.PlayerStatisticsModel;
 
 public class PlayerStatisticsView {
     public void displayStats(PlayerStatisticsModel model, Player player) {

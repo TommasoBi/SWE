@@ -1,4 +1,4 @@
-package tournament;
+package View;
 
 // View per il torneo
 public class TournamentView {
