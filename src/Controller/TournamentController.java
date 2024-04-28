@@ -1,4 +1,8 @@
-package tournament;
+package Controller;
+
+import Models.TournamentModel;
+import View.TournamentView;
+import tournament.TournamentStrategy;
 
 import java.util.List;
 
