@@ -1,8 +1,9 @@
 import analysis.Player;
-import analysis.PlayerStatistics;
+import analysis.PlayerStatisticsController;
+import analysis.PlayerStatisticsModel;
+import analysis.PlayerStatisticsView;
 import booking.*;
 import tournament.*;
-import tournament.TournamentManager;
 import tournament.SingleEliminationTournamentStrategy;
 import tournament.SingleEliminationTournamentSimulation;
 import tournament.RoundRobinTournamentStrategy;
@@ -14,14 +15,15 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         //1
-        // Otteniamo l'istanza di booking.ReservationManager (Singleton)
-        ReservationManager authority = ReservationManager.getInstance();
+        // Creazione del Model e della View per le prenotazioni
+        BookingModel model = new BookingModel();
+        BookingView view = new BookingView();
 
-        // Creiamo un comando di prenotazione per il campo "Campo1" all'orario "14:00"
-        ReservationCommand order = new CourtReservationCommand(authority, "Campo1", "14:00");
+        // Creazione del Controller per le prenotazioni
+        BookingController controller = new BookingController(model, view);
 
-        // Eseguiamo il comando
-        order.execute();
+        // Prenotazione di un campo "Campo1" all'orario "14:00"
+        controller.bookCourt("Clay", "14:00");
 
         // Creazione di prenotazioni utilizzando la factory
         Booking clayBooking = BookingFactory.createBooking("clay");
@@ -59,25 +61,28 @@ public class Main {
         Player player1 = new Player("Sinner");
         Player player2 = new Player("Medvedev");
 
-        // Creazione osservatori
-        PlayerStatistics statistics1 = new PlayerStatistics(player1);
-        PlayerStatistics statistics2 = new PlayerStatistics(player2);
+        // Creazione del Model, View e Controller per le statistiche dei giocatori
+        PlayerStatisticsModel model1 = new PlayerStatisticsModel();
+        PlayerStatisticsView view1 = new PlayerStatisticsView();
+        PlayerStatisticsController controller1 = new PlayerStatisticsController(model1, view1);
+        PlayerStatisticsController controller2 = new PlayerStatisticsController(model1, view1);
 
-        // Simulazione partite giocate
-        player1.playMatch(3);
-        player2.playMatch(2);
+        // Aggiunta dei giocatori come osservatori al Model tramite i Controller
+        player1.addObserver(controller1);
+        player2.addObserver(controller2);
+
+        // Simulazione delle partite giocate
+        player1.playMatch(2); // Player 1 vince 2 set
+        player2.playMatch(1); // Player 2 vince 1 set
 
         //4
-        // Creazione del torneo utilizzando il Singleton
+        // Creazione del torneo ad eliminazione diretta utilizzando il Singleton
         TournamentManager tournamentManager = TournamentManager.getInstance();
 
-        // Impostazione della strategia di pianificazione del torneo
-        tournamentManager.setStrategy(SingleEliminationTournamentStrategy.getInstance());
+        // Impostazione della strategia di pianificazione del torneo ad eliminazione diretta
+        tournamentManager.setStrategy(new SingleEliminationTournamentStrategy());
 
-        // Pianificazione del torneo
-        tournamentManager.planTournament();
-
-        // Lista dei giocatori nel torneo
+        // Lista dei giocatori nel torneo ad eliminazione diretta
         List<String> players = new ArrayList<>();
         players.add("Djokovic");
         players.add("Sonego");
@@ -88,20 +93,16 @@ public class Main {
         players.add("Alcaraz");
         players.add("Rublev");
 
-        // Simulazione del torneo ad eliminazione diretta
-        SingleEliminationTournamentSimulation simulation = new SingleEliminationTournamentSimulation(players);
-        simulation.simulateTournament();
+        // Pianificazione del torneo ad eliminazione diretta
+        tournamentManager.planTournament(players);
 
-        // Creazione del manager del torneo
+        // Creazione del torneo a girone utilizzando il Singleton
         TournamentManager tournamentManager2 = TournamentManager.getInstance();
 
         // Impostazione della strategia del torneo a girone
-        tournamentManager2.setStrategy(RoundRobinTournamentStrategy.getInstance());
+        tournamentManager2.setStrategy(new RoundRobinTournamentStrategy());
 
-        // Pianificazione del torneo
-        tournamentManager2.planTournament();
-
-        // Lista dei giocatori nel torneo
+        // Lista dei giocatori nel torneo a girone
         List<String> players2 = new ArrayList<>();
         players2.add("Djokovic");
         players2.add("Sonego");
@@ -112,9 +113,8 @@ public class Main {
         players2.add("Alcaraz");
         players2.add("Rublev");
 
-        // Simulazione del torneo a girone
-        RoundRobinTournamentSimulation simulation2 = new RoundRobinTournamentSimulation(players2);
-        simulation2.simulateTournament();
+        // Pianificazione del torneo a girone
+        tournamentManager2.planTournament(players2);
     }
 }
 
