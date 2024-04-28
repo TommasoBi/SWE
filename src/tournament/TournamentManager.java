@@ -1,5 +1,7 @@
 package tournament;
 
+import java.util.List;
+
 // SINGLETON PATTERN
 /* gestisce il torneo utilizzando il design pattern Singleton
  e può impostare la strategia di pianificazione del torneo tramite il metodo setStrategy
@@ -21,7 +23,7 @@ public class TournamentManager {
         this.strategy = strategy;
     }
 
-    public void planTournament() {
-        strategy.planTournament();
+    public void planTournament(List<String> players) {
+        strategy.planTournament(players);
     }
 }

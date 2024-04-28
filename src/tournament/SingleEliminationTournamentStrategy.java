@@ -1,19 +1,18 @@
 package tournament;
 
-// STRATEGY PATTERN
+import java.util.List;
+
+// Implementazione di una strategia di pianificazione del torneo ad eliminazione diretta
 // Implementazione di una strategia di pianificazione del torneo ad eliminazione diretta
 public class SingleEliminationTournamentStrategy implements TournamentStrategy {
-    private static final SingleEliminationTournamentStrategy instance = new SingleEliminationTournamentStrategy();
-
-    private SingleEliminationTournamentStrategy() {}
-
-    public static SingleEliminationTournamentStrategy getInstance() {
-        return instance;
-    }
-
     @Override
-    public void planTournament() {
+    public void planTournament(List<String> players) {
         // Implementa la pianificazione del torneo ad eliminazione diretta
         System.out.println("Planning Single Elimination Tournament...");
+        // Implementa la simulazione del torneo ad eliminazione diretta
+        SingleEliminationTournamentSimulation simulation = new SingleEliminationTournamentSimulation(players);
+        simulation.simulateTournament();
     }
 }
+
+

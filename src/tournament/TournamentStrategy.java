@@ -1,7 +1,9 @@
 package tournament;
 
-// STRATEGY PATTERN
+import java.util.List;
+
 // Interfaccia per le strategie di pianificazione del torneo
 interface TournamentStrategy {
-    void planTournament();
+    void planTournament(List<String> players);
 }
+
