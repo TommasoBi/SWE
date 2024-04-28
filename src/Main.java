@@ -1,11 +1,13 @@
-import analysis.Player;
-import analysis.PlayerStatisticsController;
-import analysis.PlayerStatisticsModel;
-import analysis.PlayerStatisticsView;
+import Controller.BookingController;
+import Models.BookingModel;
+import View.BookingView;
+import Models.Player;
+import Controller.PlayerStatisticsController;
+import Models.PlayerStatisticsModel;
+import View.PlayerStatisticsView;
 import booking.*;
 import tournament.*;
 import tournament.SingleEliminationTournamentStrategy;
-import tournament.SingleEliminationTournamentSimulation;
 import tournament.RoundRobinTournamentStrategy;
 
 
