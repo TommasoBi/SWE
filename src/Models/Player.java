@@ -1,4 +1,6 @@
-package analysis;
+package Models;
+
+import analysis.PlayerObserver;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +10,7 @@ import java.util.Map;
 // OBSERVER PATTERN
 /* Questo pattern ti permette di definire una dipendenza uno-a-molti tra oggetti,
  in modo che quando un oggetto cambia stato, tutti i suoi osservatori vengano notificati
-  e aggiornati automaticamente. In questo caso, potresti avere un oggetto analysis.Player
+  e aggiornati automaticamente. In questo caso, potresti avere un oggetto Models.Player
   che viene osservato da oggetti StatisticheGiocatori che tengono traccia
   delle statistiche di ciascun giocatore
  */

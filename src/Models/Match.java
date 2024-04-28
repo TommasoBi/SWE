@@ -1,7 +1,7 @@
-package tournament;
+package Models;
 
 // Classe per rappresentare una partita nel torneo ad eliminazione diretta
-class Match {
+public class Match {
     private String player1;
     private String player2;
 
