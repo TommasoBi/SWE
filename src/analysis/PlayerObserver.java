@@ -1,9 +1,9 @@
 package analysis;
 
-import analysis.Player;
+import Models.Player;
 
 // OBSERVER PATTERN
 // Interfaccia osservata
-interface PlayerObserver {
+public interface PlayerObserver {
     void update(Player player);
 }

@@ -1,5 +1,7 @@
 package tournament;
 
+import Models.Match;
+
 import java.util.ArrayList;
 import java.util.List;
 

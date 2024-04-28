@@ -1,5 +1,9 @@
 package booking;
 
+import Models.ClayCourtBooking;
+import Models.GrassCourtBooking;
+import Models.SyntheticCourtBooking;
+
 // FACTORY PATTERN
 /*Il metodo della factory accetterà un parametro che indica il tipo di prenotazione da creare
  e restituirà un'istanza appropriata della classe di prenotazione corrispondente
