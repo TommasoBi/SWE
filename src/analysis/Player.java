@@ -1,7 +1,9 @@
 package analysis;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 // OBSERVER PATTERN
 /* Questo pattern ti permette di definire una dipendenza uno-a-molti tra oggetti,
@@ -57,3 +59,4 @@ public class Player {
         return setsWon;
     }
 }
+
