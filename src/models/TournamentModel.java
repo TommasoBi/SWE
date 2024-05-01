@@ -1,6 +1,5 @@
-package Models;
+package models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 // Model per il torneo

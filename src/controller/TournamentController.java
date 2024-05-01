@@ -1,8 +1,8 @@
-package Controller;
+package controller;
 
-import Models.TournamentModel;
-import View.TournamentView;
-import tournament.TournamentStrategy;
+import models.TournamentModel;
+import view.TournamentView;
+import models.tournament.TournamentStrategy;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class TournamentController {
 
         List<String> players = model.getPlayers();
         if (players == null || ((List<?>) players).isEmpty()) {
-            System.out.println("Error: No players found for the tournament.");
+            System.out.println("Error: No players found for the models.tournament.");
             return;
         }
 

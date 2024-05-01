@@ -1,4 +1,4 @@
-package View;
+package view;
 
 // View
 public class BookingView {

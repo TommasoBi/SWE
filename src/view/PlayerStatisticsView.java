@@ -1,7 +1,7 @@
-package View;
+package view;
 
-import Models.Player;
-import Models.PlayerStatisticsModel;
+import models.Player;
+import models.PlayerStatisticsModel;
 
 public class PlayerStatisticsView {
     public void displayStats(PlayerStatisticsModel model, Player player) {

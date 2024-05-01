@@ -1,9 +1,9 @@
-package Controller;
+package controller;
 
-import Models.BookingModel;
-import View.BookingView;
-import booking.Booking;
-import booking.BookingFactory;
+import models.BookingModel;
+import view.BookingView;
+import models.booking.Booking;
+import models.booking.BookingFactory;
 
 // Controller
 public class BookingController {

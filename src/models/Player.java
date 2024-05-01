@@ -1,11 +1,9 @@
-package Models;
+package models;
 
-import analysis.PlayerObserver;
+import models.analysis.PlayerObserver;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 // OBSERVER PATTERN
 /* Questo pattern ti permette di definire una dipendenza uno-a-molti tra oggetti,

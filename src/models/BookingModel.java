@@ -1,4 +1,4 @@
-package Models;
+package models;
 
 // Model
 public class BookingModel {

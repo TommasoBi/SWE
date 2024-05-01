@@ -1,11 +1,11 @@
-package Models;
+package models;
 
-import booking.Booking;
+import models.booking.Booking;
 
 // Implementazione concreta di prenotazione per campo sintetico
 public class SyntheticCourtBooking implements Booking {
     @Override
     public void book() {
-        System.out.println("booking.Booking a synthetic court");
+        System.out.println("Booking a synthetic court");
     }
 }
