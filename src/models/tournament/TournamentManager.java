@@ -1,4 +1,4 @@
-package tournament;
+package models.tournament;
 
 import java.util.List;
 

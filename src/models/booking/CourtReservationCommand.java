@@ -1,4 +1,4 @@
-package booking;
+package models.booking;
 
 // Command pattern
 public class CourtReservationCommand implements ReservationCommand {

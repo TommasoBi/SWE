@@ -1,8 +1,8 @@
-package booking;
+package models.booking;
 
-import Models.ClayCourtBooking;
-import Models.GrassCourtBooking;
-import Models.SyntheticCourtBooking;
+import models.ClayCourtBooking;
+import models.GrassCourtBooking;
+import models.SyntheticCourtBooking;
 
 // FACTORY PATTERN
 /*Il metodo della factory accetterà un parametro che indica il tipo di prenotazione da creare
@@ -18,7 +18,7 @@ public class BookingFactory {
             case "synthetic":
                 return new SyntheticCourtBooking();
             default:
-                throw new IllegalArgumentException("Invalid booking type: " + type);
+                throw new IllegalArgumentException("Invalid type: " + type);
         }
     }
 }

@@ -1,4 +1,4 @@
-package booking;
+package models.booking;
 
 // COMMAND PATTERN
 // Questa è un'interfaccia che dichiara il metodo execute. Rappresenta un comando generico.
