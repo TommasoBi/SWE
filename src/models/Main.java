@@ -29,16 +29,6 @@ public class Main {
         // Prenotazione di un campo "Campo1" all'orario "14:00"
         controller.bookCourt("Clay", "14:00");
 
-        // Creazione di prenotazioni utilizzando la factory
-        Booking clayBooking = BookingFactory.createBooking("clay");
-        clayBooking.book();
-
-        /*models.booking.Booking grassBooking = models.booking.BookingFactory.createBooking("grass");
-        grassBooking.book();
-
-        models.booking.Booking syntheticBooking = models.booking.BookingFactory.createBooking("synthetic");
-        syntheticBooking.book();*/
-
         //2
         // Otteniamo l'istanza di models.MatchTracker (Singleton)
         MatchTracker tracker = MatchTracker.getInstance();
