@@ -1,14 +1,16 @@
-import Controller.BookingController;
-import Models.BookingModel;
-import View.BookingView;
-import Models.Player;
-import Controller.PlayerStatisticsController;
-import Models.PlayerStatisticsModel;
-import View.PlayerStatisticsView;
-import booking.*;
-import tournament.*;
-import tournament.SingleEliminationTournamentStrategy;
-import tournament.RoundRobinTournamentStrategy;
+package models;
+
+import controller.BookingController;
+import models.BookingModel;
+import view.BookingView;
+import models.Player;
+import controller.PlayerStatisticsController;
+import models.PlayerStatisticsModel;
+import view.PlayerStatisticsView;
+import models.booking.*;
+import models.tournament.*;
+import models.tournament.SingleEliminationTournamentStrategy;
+import models.tournament.RoundRobinTournamentStrategy;
 
 
 import java.util.List;
@@ -31,14 +33,14 @@ public class Main {
         Booking clayBooking = BookingFactory.createBooking("clay");
         clayBooking.book();
 
-        /*booking.Booking grassBooking = booking.BookingFactory.createBooking("grass");
+        /*models.booking.Booking grassBooking = models.booking.BookingFactory.createBooking("grass");
         grassBooking.book();
 
-        booking.Booking syntheticBooking = booking.BookingFactory.createBooking("synthetic");
+        models.booking.Booking syntheticBooking = models.booking.BookingFactory.createBooking("synthetic");
         syntheticBooking.book();*/
 
         //2
-        // Otteniamo l'istanza di MatchTracker (Singleton)
+        // Otteniamo l'istanza di models.MatchTracker (Singleton)
         MatchTracker tracker = MatchTracker.getInstance();
 
         // Aggiungiamo una partita al tracker
@@ -74,8 +76,8 @@ public class Main {
         player2.addObserver(controller2);
 
         // Simulazione delle partite giocate
-        player1.playMatch(2); // Player 1 vince 2 set
-        player2.playMatch(1); // Player 2 vince 1 set
+        player1.playMatch(3); // Player 1 vince 2 set
+        player2.playMatch(2); // Player 2 vince 1 set
 
         //4
         // Creazione del torneo ad eliminazione diretta utilizzando il Singleton

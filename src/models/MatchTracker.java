@@ -1,3 +1,5 @@
+package models;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,10 +26,10 @@ public class MatchTracker {
     public void addMatch(String playerName1, String playerName2, int setsWonByPlayer1, int setsWonByPlayer2, String matchType, String date) {
         String matchDetails = "Players: " + playerName1 + " vs " + playerName2 +
                 ", Sets won: " + playerName1 + " (" + setsWonByPlayer1 + ") - " + playerName2 + " (" + setsWonByPlayer2 + ")" +
-                ", tournament.Match type: " + matchType +
+                ", Match type: " + matchType +
                 ", Date: " + date;
         matches.add(matchDetails);
-        System.out.println("tournament.Match added: " + matchDetails);
+        System.out.println("Match added: " + matchDetails);
     }
 
     public List<String> getAllMatches() {
