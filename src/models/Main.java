@@ -27,7 +27,7 @@ public class Main {
         BookingController controller = new BookingController(model, view);
 
         // Prenotazione di un campo "Campo1" all'orario "14:00"
-        controller.bookCourt("Clay", "14:00");
+        controller.bookCourt("Clay", "14:00", "2024-07-21");
 
         //2
         // Otteniamo l'istanza di models.MatchTracker (Singleton)
@@ -66,8 +66,8 @@ public class Main {
         player2.addObserver(controller2);
 
         // Simulazione delle partite giocate
-        player1.playMatch(3); // Player 1 vince 2 set
-        player2.playMatch(2); // Player 2 vince 1 set
+        player1.playMatch(3);
+        player2.playMatch(2);
 
         //4
         // Creazione del torneo ad eliminazione diretta utilizzando il Singleton

@@ -16,10 +16,10 @@ public class BookingController {
     }
 
     // Metodo per eseguire la prenotazione
-    public void bookCourt(String courtType, String time) {
+    public void bookCourt(String courtType, String time, String date) {
         Booking booking = BookingFactory.createBooking(courtType);
         booking.book();
-        view.displayBookingConfirmation(courtType, time);
+        view.displayBookingConfirmation(courtType, time, date);
     }
 }
 
