@@ -1,16 +1,12 @@
-package models;
+package model;
 
 import controller.BookingController;
-import models.BookingModel;
 import view.BookingView;
-import models.Player;
 import controller.PlayerStatisticsController;
-import models.PlayerStatisticsModel;
 import view.PlayerStatisticsView;
-import models.booking.*;
-import models.tournament.*;
-import models.tournament.SingleEliminationTournamentStrategy;
-import models.tournament.RoundRobinTournamentStrategy;
+import model.tournament.*;
+import model.tournament.SingleEliminationTournamentStrategy;
+import model.tournament.RoundRobinTournamentStrategy;
 
 
 import java.util.List;

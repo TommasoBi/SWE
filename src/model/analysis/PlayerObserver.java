@@ -1,6 +1,6 @@
-package models.analysis;
+package model.analysis;
 
-import models.Player;
+import model.Player;
 
 // OBSERVER PATTERN
 // Interfaccia osservata

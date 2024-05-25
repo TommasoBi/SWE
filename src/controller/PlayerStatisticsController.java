@@ -1,9 +1,9 @@
 package controller;
 
-import models.Player;
-import models.PlayerStatisticsModel;
+import model.Player;
+import model.PlayerStatisticsModel;
 import view.PlayerStatisticsView;
-import models.analysis.PlayerObserver;
+import model.analysis.PlayerObserver;
 
 public class PlayerStatisticsController implements PlayerObserver {
     private PlayerStatisticsModel model;

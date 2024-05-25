@@ -1,6 +1,6 @@
-package models;
+package model;
 
-import models.analysis.PlayerObserver;
+import model.analysis.PlayerObserver;
 
 import java.util.ArrayList;
 import java.util.List;

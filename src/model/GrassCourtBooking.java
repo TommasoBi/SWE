@@ -1,6 +1,6 @@
-package models;
+package model;
 
-import models.booking.Booking;
+import model.booking.Booking;
 
 // Implementazione concreta di prenotazione per campo in erba
 public class GrassCourtBooking implements Booking {

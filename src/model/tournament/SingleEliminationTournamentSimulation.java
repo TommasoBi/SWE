@@ -1,6 +1,6 @@
-package models.tournament;
+package model.tournament;
 
-import models.Match;
+import model.Match;
 
 import java.util.ArrayList;
 import java.util.List;

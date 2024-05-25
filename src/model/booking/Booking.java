@@ -1,4 +1,4 @@
-package models.booking;
+package model.booking;
 
 // Interfaccia di prenotazione
 public interface Booking {

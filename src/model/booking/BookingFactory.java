@@ -1,8 +1,8 @@
-package models.booking;
+package model.booking;
 
-import models.ClayCourtBooking;
-import models.GrassCourtBooking;
-import models.SyntheticCourtBooking;
+import model.ClayCourtBooking;
+import model.GrassCourtBooking;
+import model.SyntheticCourtBooking;
 
 // FACTORY PATTERN
 /*Il metodo della factory accetterà un parametro che indica il tipo di prenotazione da creare

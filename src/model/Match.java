@@ -1,4 +1,4 @@
-package models;
+package model;
 
 // Classe per rappresentare una partita nel torneo ad eliminazione diretta
 public class Match {
