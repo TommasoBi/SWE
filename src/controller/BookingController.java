@@ -24,8 +24,15 @@ public class BookingController {
             view.displayErrorMessage("Invalid date");
             return;
         }
+
+        if (!model.isSlotAvailable(courtType, date, time)) {
+            view.displayErrorMessage("Campo non disponibile");
+            return;
+        }
+
         Booking booking = BookingFactory.createBooking(courtType);
         booking.book();
+        model.bookSlot(courtType, date, time);
         view.displayBookingConfirmation(courtType, time, date);
     }
 

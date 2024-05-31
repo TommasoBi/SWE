@@ -24,6 +24,7 @@ public class Main {
 
         // Prenotazione di un campo "Campo1" all'orario "14:00"
         controller.bookCourt("Clay", "14:00", "2024-07-21");
+        controller.bookCourt("Clay", "14:00", "2024-07-21");
 
         //2
         // Otteniamo l'istanza di models.MatchTracker (Singleton)
