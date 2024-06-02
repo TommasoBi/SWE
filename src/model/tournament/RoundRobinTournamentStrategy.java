@@ -6,8 +6,12 @@ import java.util.List;
 // Implementazione di una strategia di pianificazione del torneo a girone
 // Implementazione di una strategia di pianificazione del torneo a girone
 public class RoundRobinTournamentStrategy implements TournamentStrategy {
+    private static final int REQUIRED_PLAYERS = 8;
     @Override
     public void planTournament(List<String> players) {
+        if (players.size() != REQUIRED_PLAYERS) {
+            throw new IllegalArgumentException("Round Robin Tournament requires exactly " + REQUIRED_PLAYERS + " players.");
+        }
         // Implementa la pianificazione del torneo a girone
         System.out.println("Planning Round Robin Tournament...");
         // Implementa la simulazione del torneo a girone
