@@ -9,4 +9,3 @@ public class BookingView {
         System.out.println("Errore: " + message);
     }
 }
-

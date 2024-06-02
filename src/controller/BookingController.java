@@ -36,7 +36,7 @@ public class BookingController {
         view.displayBookingConfirmation(courtType, time, date);
     }
 
-    private boolean isValidDate(String date) {
+    public boolean isValidDate(String date) {
         try {
             // Formato della data, ad esempio "yyyy-MM-dd"
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");

@@ -13,18 +13,14 @@ public class BookingModel {
 
     public boolean isSlotAvailable(String courtType, String date, String time) {
         if (!bookings.containsKey(courtType)) {
-            bookings.put(courtType, new HashMap<>());
+            return true;
         }
-        String slot = date + " " + time;
-        return !bookings.get(courtType).getOrDefault(slot, false);
+        Map<String, Boolean> courtBookings = bookings.get(courtType);
+        return !courtBookings.containsKey(date + " " + time);
     }
 
     public void bookSlot(String courtType, String date, String time) {
-        if (!bookings.containsKey(courtType)) {
-            bookings.put(courtType, new HashMap<>());
-        }
-        String slot = date + " " + time;
-        bookings.get(courtType).put(slot, true);
+        bookings.computeIfAbsent(courtType, k -> new HashMap<>()).put(date + " " + time, true);
     }
 }
 
