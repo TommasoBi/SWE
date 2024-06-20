@@ -15,11 +15,11 @@ public class RoundRobinTournamentSimulation {
         List<String> group1 = new ArrayList<>(players2.subList(0, players2.size() / 2));
         List<String> group2 = new ArrayList<>(players2.subList(players2.size() / 2, players2.size()));
 
-        System.out.println("Group 1 Matches:");
+        System.out.println("Group 1:");
         simulateGroup(group1);
         System.out.println();
 
-        System.out.println("Group 2 Matches:");
+        System.out.println("Group 2:");
         simulateGroup(group2);
         System.out.println();
     }
