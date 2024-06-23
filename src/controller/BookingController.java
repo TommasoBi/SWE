@@ -1,8 +1,8 @@
 package controller;
 
 import model.BookingModel;
+import model.booking.Surface;
 import view.BookingView;
-import model.booking.Booking;
 import model.booking.BookingFactory;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,7 +30,7 @@ public class BookingController {
             return;
         }
 
-        Booking booking = BookingFactory.createBooking(courtType);
+        Surface booking = BookingFactory.createBooking(courtType);
         booking.book();
         model.bookSlot(courtType, date, time);
         view.displayBookingConfirmation(courtType, time, date);
