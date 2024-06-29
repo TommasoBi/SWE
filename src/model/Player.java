@@ -18,12 +18,14 @@ public class Player {
     private String name;
     private int matchesPlayed;
     private int setsWon;
+    private int matchesWon;
     private List<PlayerObserver> observers;
 
     public Player(String name) {
         this.name = name;
         this.matchesPlayed = 0;
         this.setsWon = 0;
+        this.matchesWon = 0;
         this.observers = new ArrayList<>();
     }
 
@@ -35,9 +37,12 @@ public class Player {
         observers.remove(observer);
     }
 
-    public void playMatch(int setsWon) {
+    public void playMatch(int setsWon, boolean wonMatch) {
         matchesPlayed++;
         this.setsWon += setsWon;
+        if (wonMatch) {
+            matchesWon++;
+        }
         notifyObservers();
     }
 
@@ -57,6 +62,20 @@ public class Player {
 
     public int getSetsWon() {
         return setsWon;
+    }
+
+    public int getMatchesWon() {
+        return matchesWon;
+    }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", matchesPlayed=" + matchesPlayed +
+                ", setsWon=" + setsWon +
+                ", matchesWon=" + matchesWon +
+                '}';
     }
 }
 
