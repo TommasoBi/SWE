@@ -25,7 +25,7 @@ public class PlayerStatisticsTest {
     @Test
     public void testPlayerStatisticsUpdate() {
         // Giocatore gioca una partita e vince 3 set
-        player.playMatch(3);
+        player.playMatch(3,true);
         // Verifica che il numero di partite giocate sia stato aggiornato
         assertEquals(1, player.getMatchesPlayed(), "Numero di partite giocate non corretto");
         // Verifica che il numero di set vinti sia stato aggiornato
