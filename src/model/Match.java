@@ -1,25 +1,33 @@
 package model;
 
+import java.time.LocalDateTime;
 // Classe per rappresentare una partita nel torneo ad eliminazione diretta
 public class Match {
-    private String player1;
-    private String player2;
+    private Player player1;
+    private Player player2;
+    private LocalDateTime dateTime;
+    private String location;
 
-    public Match(String player1, String player2) {
+    public Match(Player player1, Player player2, LocalDateTime dateTime, String location) {
         this.player1 = player1;
         this.player2 = player2;
+        this.dateTime = dateTime;
+        this.location = location;
     }
 
-    public String getPlayer1() {
+    public Player getPlayer1() {
         return player1;
     }
 
-    public String getPlayer2() {
+    public Player getPlayer2() {
         return player2;
     }
 
-    public String getWinner() {
-        // Simulazione della partita: restituisci il giocatore vincente casualmente
-        return Math.random() < 0.5 ? player1 : player2;
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public String getLocation() {
+        return location;
     }
 }
