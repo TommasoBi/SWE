@@ -63,49 +63,50 @@ public class Main {
         player2.addObserver(controller2);
 
         // Simulazione delle partite giocate
-        player1.playMatch(3);
-        player2.playMatch(2);
+        player1.playMatch(3,true);
+        player2.playMatch(2,false);
+
+        player1.removeObserver(controller1);
+        player2.removeObserver(controller2);
 
         //4
-        // Creazione del torneo ad eliminazione diretta utilizzando il Singleton
+        List<Player> players = createPlayers();
+        List<Referee> referees = createReferees();
+
         TournamentManager tournamentManager = TournamentManager.getInstance();
 
-        // Impostazione della strategia di pianificazione del torneo ad eliminazione diretta
+        // Single Elimination Tournament
+        List<Player> playersForSingleElimination = new ArrayList<>(players);
         tournamentManager.setStrategy(new SingleEliminationTournamentStrategy());
+        System.out.println("Planning Single Elimination Tournament...");
+        tournamentManager.planTournament(playersForSingleElimination, referees);
 
-        // Lista dei giocatori nel torneo ad eliminazione diretta
-        List<String> players = new ArrayList<>();
-        players.add("Djokovic");
-        players.add("Sonego");
-        players.add("Sinner");
-        players.add("Zverev");
-        players.add("Berrettini");
-        players.add("Medvedev");
-        players.add("Alcaraz");
-        players.add("Rublev");
+        // Round Robin Tournament
+        List<Player> playersForRoundRobin = new ArrayList<>(players);
+        tournamentManager.setStrategy(new RoundRobinTournamentStrategy());
+        System.out.println("Planning Round Robin Tournament...");
+        tournamentManager.planTournament(playersForRoundRobin, referees);
+    }
 
-        // Pianificazione del torneo ad eliminazione diretta
-        tournamentManager.planTournament(players);
+    private static List<Player> createPlayers() {
+        List<Player> players = new ArrayList<>();
+        players.add(new Player("Djokovic"));
+        players.add(new Player("Sonego"));
+        players.add(new Player("Sinner"));
+        players.add(new Player("Zverev"));
+        players.add(new Player("Berrettini"));
+        players.add(new Player("Medvedev"));
+        players.add(new Player("Alcaraz"));
+        players.add(new Player("Rublev"));
+        return players;
+    }
 
-        // Creazione del torneo a girone utilizzando il Singleton
-        TournamentManager tournamentManager2 = TournamentManager.getInstance();
-
-        // Impostazione della strategia del torneo a girone
-        tournamentManager2.setStrategy(new RoundRobinTournamentStrategy());
-
-        // Lista dei giocatori nel torneo a girone
-        List<String> players2 = new ArrayList<>();
-        players2.add("Djokovic");
-        players2.add("Sonego");
-        players2.add("Sinner");
-        players2.add("Zverev");
-        players2.add("Berrettini");
-        players2.add("Medvedev");
-        players2.add("Alcaraz");
-        players2.add("Rublev");
-
-        // Pianificazione del torneo a girone
-        tournamentManager2.planTournament(players2);
+    private static List<Referee> createReferees() {
+        List<Referee> referees = new ArrayList<>();
+        referees.add(new Referee("Referee 1", 10));
+        referees.add(new Referee("Referee 2", 5));
+        referees.add(new Referee("Referee 3", 8));
+        return referees;
     }
 }
 
