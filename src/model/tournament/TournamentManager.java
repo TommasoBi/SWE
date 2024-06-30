@@ -1,5 +1,7 @@
 package model.tournament;
 
+import model.Player;
+
 import java.util.List;
 
 // SINGLETON PATTERN
@@ -23,7 +25,8 @@ public class TournamentManager {
         this.strategy = strategy;
     }
 
-    public void planTournament(List<String> players) {
-        strategy.planTournament(players);
+    public void planTournament(List<Player> players, List<Referee> referees) {
+        MatchAssigner matchAssigner = new MatchAssigner();
+        strategy.planTournament(players, matchAssigner, referees);
     }
 }
