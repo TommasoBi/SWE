@@ -5,22 +5,13 @@ import model.Match;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 
 public class MatchAssigner {
-    private List<Referee> referees;
+    private final Random random = new Random();
 
-    public MatchAssigner(List<Referee> referees) {
-        // Ordina gli arbitri per esperienza in ordine decrescente
-        this.referees = new ArrayList<>(referees);
-        this.referees.sort(Comparator.comparingInt(Referee::getExperience).reversed());
-    }
-
-    public void assignReferee(Match match) {
-        if (referees.isEmpty()) {
-            System.out.println("No referees available for match between " + match.getPlayer1().getName() + " and " + match.getPlayer2().getName());
-            return;
-        }
-        Referee referee = referees.get(0); // Assign the most experienced referee available
+    public void assignReferee(Match match, List<Referee> referees) {
+        Referee referee = referees.get(random.nextInt(referees.size()));
         System.out.println("Assigning " + referee.getName() + " with " + referee.getExperience() + " years of experience to match between " + match.getPlayer1().getName() + " and " + match.getPlayer2().getName());
     }
 
