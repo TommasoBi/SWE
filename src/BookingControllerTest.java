@@ -18,33 +18,33 @@ public class BookingControllerTest {
     @Test
     public void testValidDate() {
         // Test date valida
-        assertTrue(controller.isValidDate("2024-08-25"));
+        assertTrue(controller.isValidDate("2024-11-25"));
         // Test date nel passato
         assertFalse(controller.isValidDate("2020-01-01"));
         // Test date oltre un anno nel futuro
         assertFalse(controller.isValidDate("2025-12-31"));
         // Test date con formato non valido
-        assertFalse(controller.isValidDate("15-06-2024"));
+        assertFalse(controller.isValidDate("15-11-2024"));
     }
     @Test
     public void testBookingConflict() {
         // Prenotazione iniziale
-        controller.bookCourt("Clay", "14:00", "2024-08-25");
-        System.out.println("After first booking: " + model.isSlotAvailable("Clay", "2024-08-25", "14:00"));
+        controller.bookCourt("Clay", "14:00", "2024-11-25");
+        System.out.println("After first booking: " + model.isSlotAvailable("Clay", "2024-11-25", "14:00"));
         // Tentativo di prenotare lo stesso slot, dovrebbe fallire
-        assertFalse(model.isSlotAvailable("Clay", "2024-08-25", "14:00"));
-        controller.bookCourt("Clay", "14:00", "2024-08-25");
-        assertFalse(model.isSlotAvailable("Clay", "2024-08-25", "14:00"));
+        assertFalse(model.isSlotAvailable("Clay", "2024-11-25", "14:00"));
+        controller.bookCourt("Clay", "14:00", "2024-11-25");
+        assertFalse(model.isSlotAvailable("Clay", "2024-11-25", "14:00"));
     }
     @Test
     public void testBookingWithoutConflict() {
         // Prenotazione iniziale
-        controller.bookCourt("Clay", "14:00", "2024-08-25");
+        controller.bookCourt("Clay", "14:00", "2024-11-25");
         // Prenotazione di un altro slot, dovrebbe avere successo
-        assertTrue(model.isSlotAvailable("Clay", "2024-08-25", "16:00"));
-        controller.bookCourt("Clay", "16:00", "2024-08-25");
+        assertTrue(model.isSlotAvailable("Clay", "2024-11-25", "16:00"));
+        controller.bookCourt("Clay", "16:00", "2024-11-25");
         // Verifica che entrambi gli slot siano prenotati
-        assertFalse(model.isSlotAvailable("Clay", "2024-08-25", "14:00"));
-        assertFalse(model.isSlotAvailable("Clay", "2024-08-25", "16:00"));
+        assertFalse(model.isSlotAvailable("Clay", "2024-11-25", "14:00"));
+        assertFalse(model.isSlotAvailable("Clay", "2024-11-25", "16:00"));
     }
 }
