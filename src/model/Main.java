@@ -23,8 +23,8 @@ public class Main {
         BookingController controller = new BookingController(model, view);
 
         // Prenotazione di un campo "Campo1" all'orario "14:00"
-        controller.bookCourt("Clay", "14:00", "2024-11-10");
-        controller.bookCourt("Clay", "14:00", "2024-11-10");
+        controller.bookCourt("Clay", "14:00", "2025-02-10");
+        controller.bookCourt("Clay", "14:00", "2025-02-10");
 
         //2
         // Otteniamo l'istanza di models.MatchTracker (Singleton)
@@ -36,7 +36,7 @@ public class Main {
         int setsWonByPlayer1 = 3;
         int setsWonByPlayer2 = 2;
         String matchType = "Singles";
-        String date = "2024-09-28";
+        String date = "2025-01-13";
 
         tracker.addMatch(playerName1, playerName2, setsWonByPlayer1, setsWonByPlayer2, matchType, date);
 
