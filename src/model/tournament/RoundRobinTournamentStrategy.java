@@ -10,6 +10,7 @@ import java.util.List;
 // Implementazione di una strategia di pianificazione del torneo a girone
 public class RoundRobinTournamentStrategy implements TournamentStrategy {
     private static final int REQUIRED_PLAYERS = 8;
+    private static final int GROUP_SIZE = 4;
 
     @Override
     public void planTournament(List<Player> players, MatchAssigner matchAssigner, List<Referee> referees) {
@@ -17,15 +18,31 @@ public class RoundRobinTournamentStrategy implements TournamentStrategy {
             throw new IllegalArgumentException("Round Robin Tournament requires exactly " + REQUIRED_PLAYERS + " players.");
         }
 
+        // Divide players into two groups
+        List<Player> groupA = players.subList(0, GROUP_SIZE);
+        List<Player> groupB = players.subList(GROUP_SIZE, REQUIRED_PLAYERS);
+
         List<Score> scores = new ArrayList<>();
         List<Sponsor> sponsors = createSponsors();
 
-        // Plan matches
-        for (int i = 0; i < players.size(); i++) {
-            for (int j = i + 1; j < players.size(); j++) {
-                Player player1 = players.get(i);
-                Player player2 = players.get(j);
-                Match match = new Match(player1, player2, LocalDateTime.now().plusDays(i + j), "Court 1");
+        // Plan matches for Group A
+        planGroupMatches(groupA, "Group A", scores, matchAssigner, referees);
+
+        // Plan matches for Group B
+        planGroupMatches(groupB, "Group B", scores, matchAssigner, referees);
+
+        printScores(scores);
+        printSponsors(sponsors);
+    }
+
+    private void planGroupMatches(List<Player> group, String groupName, List<Score> scores, MatchAssigner matchAssigner, List<Referee> referees) {
+        System.out.println("Planning matches for " + groupName);
+
+        for (int i = 0; i < group.size(); i++) {
+            for (int j = i + 1; j < group.size(); j++) {
+                Player player1 = group.get(i);
+                Player player2 = group.get(j);
+                Match match = new Match(player1, player2, LocalDateTime.now().plusDays(i + j), "Court " + groupName);
                 matchAssigner.assignReferee(match, referees);
                 matchAssigner.scheduleMatch(match);
 
@@ -36,8 +53,6 @@ public class RoundRobinTournamentStrategy implements TournamentStrategy {
                 scores.add(score);
             }
         }
-        printScores(scores);
-        printSponsors(sponsors);
     }
 
     private List<Sponsor> createSponsors() {
